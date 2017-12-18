@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.danielli.xultimate</groupId>
+		<artifactId>xultimate-toolkit</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>xultimate-core</artifactId>
+
+	<name>The X-Ultimate Toolkit Core</name>
+	<description>The X-Ultimate Toolkit core project.</description>
+	<url>https://github.com/daniellitoc/xultimate-toolkit/tree/master/xultimate-core</url>
+
+	<properties>
+		<org.slf4j.version>1.7.5</org.slf4j.version>
+		<org.apache.logging.log4j.version>2.0</org.apache.logging.log4j.version>
+		<com.lmax.disruptor.version>3.2.1</com.lmax.disruptor.version>
+		<org.apache.commons.commons-lang3.version>3.1</org.apache.commons.commons-lang3.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons-collections.version>3.2.1</commons-collections.version>
+		<commons-codec.version>1.8</commons-codec.version>
+		<joda-time.version>2.2</joda-time.version>
+		<org.ocpsoft.prettytime.version>3.2.3.Final</org.ocpsoft.prettytime.version>
+		<com.belerweb.pinyin4j.version>2.5.0</com.belerweb.pinyin4j.version>
+		<org.ow2.asm.version>4.1</org.ow2.asm.version>
+		<cglib.version>3.0</cglib.version>
+		<com.alibaba.tamper.version>1.0.3</com.alibaba.tamper.version>
+
+		<com.fasterxml.jackson.core.version>2.2.2</com.fasterxml.jackson.core.version>
+		<com.alibaba.fastjson.version>1.1.34</com.alibaba.fastjson.version>
+
+		<com.dyuproject.protostuff.version>1.0.7</com.dyuproject.protostuff.version>
+		<com.esotericsoftware.kryo.version>2.21</com.esotericsoftware.kryo.version>
+		<de.javakaffee.kryo-serializers.version>0.26</de.javakaffee.kryo-serializers.version>
+
+		<com.esotericsoftware.reflectasm.reflectasm.version>1.07</com.esotericsoftware.reflectasm.reflectasm.version>
+		<org.xerial.snappy.version>1.1.1-M1</org.xerial.snappy.version>
+	</properties>
+
+	<dependencies>
+		<!-- 日志部分 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j.version}</version>
+		</dependency>
+		<!-- 替换jcl(Jakarta Commons Logging) -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j.version}</version>
+		</dependency>
+		<!-- 替换log4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+			<version>${org.slf4j.version}</version>
+		</dependency>
+		<!-- 替换jul(java.util.logging) -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>${org.slf4j.version}</version>
+		</dependency>
+		<!-- 日志实现使用Log4j 2 -->
+		<dependency>
+		  	<groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+			<version>${org.apache.logging.log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+    		<artifactId>log4j-slf4j-impl</artifactId>
+			<version>${org.apache.logging.log4j.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.lmax</groupId>
+		    <artifactId>disruptor</artifactId>
+		    <version>${com.lmax.disruptor.version}</version>
+		</dependency>
+		<!-- 日期操作 -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${joda-time.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.ocpsoft.prettytime</groupId>
+		    <artifactId>prettytime</artifactId>
+		    <version>${org.ocpsoft.prettytime.version}</version>
+		</dependency>
+		
+		<!-- Utils工具类 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${org.apache.commons.commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${commons-collections.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons-codec.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.belerweb</groupId>
+			<artifactId>pinyin4j</artifactId>
+			<version>${com.belerweb.pinyin4j.version}</version>
+		</dependency>
+		<!-- cglib依赖 -->
+		<dependency>
+			<groupId>org.ow2.asm</groupId>
+			<artifactId>asm-util</artifactId>
+			<version>${org.ow2.asm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>${cglib.version}</version>
+		</dependency>
+		<!-- tamper依赖 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-jexl</artifactId>
+			<version>2.0.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- 需要commons-lang2.4 -->
+		<dependency>
+			<groupId>com.alibaba.tamper</groupId>
+			<artifactId>tamper</artifactId>
+			<version>${com.alibaba.tamper.version}</version>
+			<exclusions>
+			<!-- 
+				<exclusion>
+					<groupId>commons-lang</groupId>
+					<artifactId>commons-lang</artifactId>
+				</exclusion>
+			 -->
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- 核心 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${org.springframework.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+		<!-- JSON -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${com.alibaba.fastjson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${com.fasterxml.jackson.core.version}</version>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- 序列化 -->
+		<dependency>
+			<groupId>com.dyuproject.protostuff</groupId>
+			<artifactId>protostuff-runtime</artifactId>
+			<version>${com.dyuproject.protostuff.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.dyuproject.protostuff</groupId>
+			<artifactId>protostuff-core</artifactId>
+			<version>${com.dyuproject.protostuff.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.esotericsoftware.kryo</groupId>
+			<artifactId>kryo</artifactId>
+			<version>${com.esotericsoftware.kryo.version}</version>
+			<classifier>shaded</classifier>
+		</dependency>
+		<dependency>
+			<groupId>de.javakaffee</groupId>
+			<artifactId>kryo-serializers</artifactId>
+			<version>${de.javakaffee.kryo-serializers.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>4.0.7</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- 返射 -->
+		<dependency>
+			<groupId>com.esotericsoftware.reflectasm</groupId>
+			<artifactId>reflectasm</artifactId>
+			<version>${com.esotericsoftware.reflectasm.reflectasm.version}</version>
+			<classifier>shaded</classifier>
+		</dependency>
+		
+		<!-- 压缩 -->
+		<dependency>
+		    <groupId>org.xerial.snappy</groupId>
+		    <artifactId>snappy-java</artifactId>
+		    <version>${org.xerial.snappy.version}</version>
+		</dependency>
+
+		<!-- 测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

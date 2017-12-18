@@ -1,0 +1,16 @@
+.settings
+.project
+.classpath
+
+.idea
+*.ipr
+*.iml
+*.iws
+
+.DS_Store
+Thumbs.db
+
+*.class
+
+target
+

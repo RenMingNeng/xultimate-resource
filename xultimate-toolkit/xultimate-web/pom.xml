@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.danielli.xultimate</groupId>
+		<artifactId>xultimate-toolkit</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>xultimate-web</artifactId>
+
+	<name>The X-Ultimate Toolkit Web</name>
+	<description>The X-Ultimate Toolkit web project.</description>
+	<url>https://github.com/daniellitoc/xultimate-toolkit/tree/master/xultimate-web</url>
+
+	<properties>
+		<org.apache.logging.log4j.version>2.0</org.apache.logging.log4j.version>
+		<com.github.httl.version>1.0.11</com.github.httl.version>
+		<org.freemarker.version>2.3.19</org.freemarker.version>
+		<org.apache.velocity.velocity.version>1.7</org.apache.velocity.velocity.version>
+		<javax.servlet.javax.servlet-api.version>3.1.0</javax.servlet.javax.servlet-api.version>
+		<javax.servlet.jsp.javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp.javax.servlet.jsp-api.version>
+		<javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
+		<taglibs.standard.version>1.1.2</taglibs.standard.version>
+		<commons-fileupload.version>1.3</commons-fileupload.version>
+		<org.apache.httpcomponents.version>4.3.1</org.apache.httpcomponents.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>xultimate-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>xultimate-context</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.httl</groupId>
+		    <artifactId>httl</artifactId>
+		    <version>${com.github.httl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>${org.apache.velocity.velocity.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-lang</groupId>
+					<artifactId>commons-lang</artifactId>
+				</exclusion>
+			</exclusions>
+			<optional>true</optional>
+		</dependency>
+		<!-- 性能没有Velocity好 -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${org.freemarker.version}</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet.javax.servlet-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-web</artifactId>
+		    <version>${org.apache.logging.log4j.version}</version>
+		    <scope>runtime</scope>
+		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${javax.servlet.jsp.javax.servlet.jsp-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		 -->
+		<!--
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${javax.servlet.jstl.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		 -->
+		<!--
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>${taglibs.standard.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		 -->	
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${org.apache.httpcomponents.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+  					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+		
+	</dependencies>
+</project>
